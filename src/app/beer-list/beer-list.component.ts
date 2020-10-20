@@ -11,24 +11,35 @@ export class BeerListComponent implements OnInit {
   beers: Beer[] = [
     {
       name: 'Bitter Call Saul',
-      style: 'IPA',
+      type: 'IPA',
       price: 180,
       stock: 5,
-      image: 'assets/img/porter.jpg'
+      image: 'assets/img/porter.jpg',
+      clearance: false,
     },
     {
       name: 'Red Red Wine',
-      style: 'Barley Wine',
+      type: 'Barley Wine',
       price: 200,
       stock: 3,
-      image: 'assets/img/porter.jpg'
+      image: 'assets/img/porter.jpg',
+      clearance: true,
     },
     {
       name: 'Yellow Submarine',
-      style: 'Golden Ale',
+      type: 'Golden Ale',
       price: 180,
       stock: 0,
-      image: 'assets/img/porter.jpg'
+      image: 'assets/img/porter.jpg',
+      clearance: false,
+    },
+    {
+      name: 'Yellow Submarine 2',
+      type: 'Golden Ale',
+      price: 180,
+      stock: 0,
+      image: 'assets/img/porter.jpg',
+      clearance: false,
     },
   ];
 
