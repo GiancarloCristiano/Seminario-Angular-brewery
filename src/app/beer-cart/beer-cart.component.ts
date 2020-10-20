@@ -10,7 +10,6 @@ export class BeerCartComponent implements OnInit {
   beer = {
     "name": "Negra Juerte",
     "price": 100,
-    "quantity": 1
   }
 
   constructor() { }
