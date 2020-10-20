@@ -23,7 +23,7 @@
                         <div class="input-group-prepend">
                             <button class="btn btn-warning btn-sm" (click)="downQuantity(beer)">-</button>
                         </div>
-                        <input type="text" class="text-center" [(ngModel)]="beer.quantity" (keyup)="changeQuantity($event, beer)">
+                        <input type="number" class="text-center" [(ngModel)]="beer.quantity" (keyup)="changeQuantity($event, beer)">
                         <div class="input-group-append">
                             <button class="btn btn-warning btn-sm" (click)="upQuantity(beer)">+</button>
                         </div>
