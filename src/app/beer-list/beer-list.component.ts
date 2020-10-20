@@ -65,8 +65,8 @@ export class BeerListComponent implements OnInit {
   }
 
   changeQuantity(event, beer: Beer): void {
-    if (0 < event.key && event.key <= beer.stock)
-      beer.quantity = event.key;
+    //if (0 < event.key && event.key <= beer.stock)
+      //beer.quantity = event.key;
   }
 
 
