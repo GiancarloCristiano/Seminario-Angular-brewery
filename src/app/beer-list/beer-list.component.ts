@@ -54,38 +54,8 @@ export class BeerListComponent implements OnInit {
   }
 
 
-  upQuantity(beer: Beer): void {
-    if (beer.quantity < beer.stock)
-    beer.quantity ++;
+  maxReached(m: string){
+    alert(m);
   }
-
-  downQuantity(beer: Beer): void {
-    if (beer.quantity > 0)
-      beer.quantity --;
-  }
-
-  changeQuantity(event, beer: Beer): void {
-    //console.log(event.key);
-    /*let isNumber = isFinite(event.key);
-    if (isNumber)
-      beer.quantity = event.key;*/
-    //if (0 < event.key && event.key <= beer.stock)
-      //beer.quantity = event.key;
-      if (event.target.value % 1!=0){
-        event.target.value=parseInt(event.target.value, 10);
-        beer.quantity = event.target.value;
-      }
-      if (event.target.value){
-        event.target.value = event.target.value - 0;
-      }
-      if (event.target.value < 0) {
-        event.target.value = event.target.value * (-1);
-        beer.quantity = event.target.value;
-      }
-      if (event.target.value > beer.stock){
-        beer.quantity = beer.stock;
-      }
-  }
-
 
 }
