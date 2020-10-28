@@ -47,7 +47,6 @@ export class BeerListComponent implements OnInit {
       quantity: 0,
     },
   ];
-  cart: BeerCartService;
 
 
   constructor(private cart: BeerCartService) { 

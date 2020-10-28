@@ -14,7 +14,8 @@
       
     </thead>
     <tbody>
-        <tr *ngFor="let beer of beers" [ngClass]="{'clearance': beer.clearance}">
+        <tr *ngFor="let beer of beers" [ngClass]="{'alert alert-success': beer.clearance}">
+            <!-- <tr *ngFor="let beer of beers" [ngClass]="{'clearance': beer.clearance}"> -->
             <td><img class="img-thumbnail" width="90" [src]="beer.image" [alt]="beer.name"/></td>
             <td>{{beer.name}}</td>
             <td>{{beer.type}}</td>
@@ -24,7 +25,8 @@
                 <app-input-integer [(quantity)]="beer.quantity" [max]="beer.stock" *ngIf="beer.stock" (maxReached)="maxReached($event)"></app-input-integer>
             </td>
             <td>
-                <button class="btn btn-success" (click)="addToCart(beer)">Comprar</button>
+                <button class="btn btn-success" *ngIf="beer.quantity!=0" (click)="addToCart(beer)">Comprar</button>
+                <button class="btn btn-light" *ngIf="beer.quantity==0" (click)="addToCart(beer)" disabled>Comprar</button>
             </td>
         </tr>
     </tbody>
