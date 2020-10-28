@@ -16,7 +16,7 @@
     <tbody>
         <tr *ngFor="let beer of beers" [ngClass]="{'alert alert-success': beer.clearance}">
             <!-- <tr *ngFor="let beer of beers" [ngClass]="{'clearance': beer.clearance}"> -->
-            <td><img class="img-thumbnail" width="90" [src]="beer.image"></td>
+            <td><img class="img-thumbnail" width="90" [src]="beer.image" [alt]="beer.name"/></td>
             <td>{{beer.name}}</td>
             <td>{{beer.type}}</td>
             <td>{{beer.price | currency}}</td>
