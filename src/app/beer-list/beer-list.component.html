@@ -7,8 +7,11 @@
             <th>Tipo</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Cantidad</th>
             <th>Compra</th>
+
         </tr>
+      
     </thead>
     <tbody>
         <tr *ngFor="let beer of beers" [ngClass]="{'clearance': beer.clearance}">
@@ -19,6 +22,9 @@
             <td><span class="badge badge-warning" *ngIf="beer.stock==0">SIN STOCK</span></td>
             <td>
                 <app-input-integer [(quantity)]="beer.quantity" [max]="beer.stock" *ngIf="beer.stock" (maxReached)="maxReached($event)"></app-input-integer>
+            </td>
+            <td>
+                <button class="btn btn-success" (click)="addToCart(beer)">Comprar</button>
             </td>
         </tr>
     </tbody>
