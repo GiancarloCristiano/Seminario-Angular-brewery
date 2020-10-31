@@ -1,11 +1,18 @@
 <div>
-    <h1>Carrito</h1>
-    <table class="table">
+    <h1 class="text-white">Carrito</h1>
+    <table class="table table-sm text-center table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Cant</th>
+            <th>Subtotal</th>
+        </tr>
         <tbody>
             <tr *ngFor="let beer of cartList$ | async">
                 <td>{{beer.name}}: </td>
-                <td class="font-weight-bold">{{beer.quantity}}</td>
+                <td class="font-weight-bold ">{{beer.quantity}}</td>
+                <td>{{beer.quantity*beer.price | currency}}</td>
             </tr>
         </tbody>
     </table>
+    <button class="btn btn-warning btn-lg btn-block">Comprar</button>
 </div>
