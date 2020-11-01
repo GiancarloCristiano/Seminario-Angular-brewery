@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-warning" style="background-image: url('https://cdn.jsdelivr.net/gh/GiancarloCristiano/angular-brewery@master/src/assets/img/fondo_birra.jpg')">
-  <a class="navbar-brand  text-white" style="font-family: 'Courgette', cursive; font-size: 1.3em;" [routerLink]="['/']">{{title}} 
+  <a class="navbar-brand text-white" style="font-family: 'Courgette', cursive; font-size: 1.3em;" [routerLink]="['/']">{{title}} 
 </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -13,7 +13,10 @@
         <a class="nav-link text-white" [routerLink]="['/description']">Descripción</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" [routerLink]="['/about']">Contacto</a>
+        <a class="nav-link text-white" [routerLink]="['/about']">Nosotros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" [routerLink]="['/contact']">Contacto</a>
       </li>
     </ul>
   </div>

@@ -16,7 +16,9 @@
     <tbody>
         <tr *ngFor="let beer of beers" [ngClass]="{'alert alert-warning': beer.clearance}">
             <!-- <tr *ngFor="let beer of beers" [ngClass]="{'clearance': beer.clearance}"> -->
-            <td><img class="img-thumbnail" width="90" [src]="beer.image" [alt]="beer.name"/></td>
+            <td><img class="img-thumbnail" width="90" [src]="beer.image" [alt]="beer.name" >
+                <h4 *ngIf="beer.clearance"><span class="badge badge-warning text-white">OFERTA</span></h4>
+                </td>
             <td>{{beer.name}}</td>
             <td>{{beer.type}}</td>
             <td>{{beer.price | currency}}</td>
@@ -27,7 +29,7 @@
             </td>
             <td>
                 <button class="btn btn-success" *ngIf="beer.quantity!=0" (click)="addToCart(beer)">Agregar</button>
-                <button class="btn btn-light" *ngIf="beer.quantity==0" (click)="addToCart(beer)" disabled>Agregar</button>
+                <button class="btn btn-light" *ngIf="beer.quantity==0" disabled>Agregar</button>
             </td>
         </tr>
     </tbody>
