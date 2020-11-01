@@ -13,8 +13,10 @@ import { Beer } from './beer-list/Beer';
 export class BeerCartService {
 
   private _cartList: Beer [] = [];
+  _total = 0;
 
   cartList: BehaviorSubject<Beer[]> = new BehaviorSubject([]);
+  total: BehaviorSubject<number> = new BehaviorSubject(this._total);
 
   constructor() { }
   
@@ -25,8 +27,14 @@ export class BeerCartService {
     } else{
       item.quantity += beer.quantity;
     }
-    console.log(this._cartList);
+    console.log(this._cartList);  
+    this._cartList.forEach(beer => {
+      this._total += (beer.price * beer.quantity);
+    });
+
     this.cartList.next(this._cartList); //equivale al emit de eventos.
+    this.total.next(this._total);
   }
+
 
 }

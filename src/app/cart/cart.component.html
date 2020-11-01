@@ -1,18 +1,24 @@
 <div>
     <h1 class="text-white">Carrito</h1>
-    <table class="table table-sm text-center table-dark">
-        <tr>
-            <th>Nombre</th>
-            <th>Cant</th>
-            <th>Subtotal</th>
-        </tr>
-        <tbody>
-            <tr *ngFor="let beer of cartList$ | async">
-                <td>{{beer.name}}: </td>
-                <td class="font-weight-bold ">{{beer.quantity}}</td>
-                <td>{{beer.quantity*beer.price | currency}}</td>
+    <div *ngIf="(cartList$ | async).length==0">
+        <p class="text-white">Carrito vacío.</p>
+    </div>
+    <div *ngIf="(cartList$ | async).length!=0">
+        <table class="table table-sm text-center table-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Cant</th>
+                <th>Subtotal</th>
             </tr>
-        </tbody>
-    </table>
-    <button class="btn btn-warning btn-lg btn-block">Comprar</button>
+            <tbody>
+                <tr *ngFor="let beer of cartList$ | async">
+                    <td>{{beer.name}}: </td>
+                    <td class="font-weight-bold ">{{beer.quantity}}</td>
+                    <td>{{beer.quantity*beer.price | currency}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="text-white text-right">Total: {{total$ | async | currency}}</h3>
+        <button class="btn btn-warning btn-lg btn-block" action="./brewery-thanks/brewery-thanks-component.html" type="submit">Comprar</button>
+    </div>
 </div>
