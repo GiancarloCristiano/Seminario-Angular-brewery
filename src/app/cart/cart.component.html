@@ -12,7 +12,7 @@
             </tr>
             <tbody>
                 <tr *ngFor="let beer of cartList$ | async">
-                    <td>{{beer.name}}: </td>
+                    <td>{{beer.name}}</td>
                     <td class="font-weight-bold ">{{beer.quantity}}</td>
                     <td>{{beer.quantity*beer.price | currency}}</td>
                 </tr>

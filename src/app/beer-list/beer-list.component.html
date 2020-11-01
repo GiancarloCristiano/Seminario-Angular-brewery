@@ -21,7 +21,7 @@
             <td>{{beer.type}}</td>
             <td>{{beer.price | currency}}</td>
             <td *ngIf="beer.stock">{{beer.stock - beer.quantity}}</td>
-            <td *ngIf="!beer.stock"><span class="badge badge-secondary text-wrap" style="width: 3rem;" *ngIf="beer.stock==0">SIN STOCK</span></td>
+            <td *ngIf="!beer.stock"><span class="badge alert-danger" *ngIf="beer.stock==0">X</span></td>
             <td>
                 <app-input-integer [(quantity)]="beer.quantity" [max]="beer.stock" *ngIf="beer.stock" (maxReached)="maxReached($event)"></app-input-integer>
             </td>
