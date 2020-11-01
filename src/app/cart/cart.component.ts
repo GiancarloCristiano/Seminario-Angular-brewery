@@ -23,6 +23,7 @@ export class CartComponent implements OnInit {
 
   finalizarCompra(){
     alert('¡Muchas gracias por su compra!');
+    location.reload();
   }
 
 

@@ -1,8 +1,11 @@
 .container {
     padding: 1.5rem;
+    min-height: 92vh;
+
 }
 
 footer {
+    bottom: 0;
     height: 60px;
     line-height: 60px;
 }

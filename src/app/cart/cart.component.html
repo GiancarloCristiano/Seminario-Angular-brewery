@@ -18,7 +18,9 @@
                 </tr>
             </tbody>
         </table>
-        <h3 class="text-white text-right">Total: {{total$ | async | currency}}</h3>
-        <button class="btn btn-warning btn-lg btn-block" action="./brewery-thanks/brewery-thanks-component.html" type="submit">Comprar</button>
+        <form action="./brewery-thanks/brewery-thanks-component.html">
+            <h3 class="text-white text-right">Total: {{total$ | async | currency}}</h3>
+            <button class="btn btn-warning btn-lg btn-block" (click)="finalizarCompra()" type="submit">Comprar</button>
+        </form>
     </div>
 </div>
