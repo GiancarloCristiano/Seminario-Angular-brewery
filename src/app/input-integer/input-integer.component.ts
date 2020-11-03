@@ -57,7 +57,7 @@ export class InputIntegerComponent implements OnInit {
         this.quantityChange.emit();
       }
       if (event.target.value){
-        event.target.value = event.target.value - 0;
+        this.quantity = parseInt(event.target.value.replace(/[^0-9]/g, ""));
         this.quantityChange.emit(event.target.value);
       }
       if (event.target.value < 0) {
